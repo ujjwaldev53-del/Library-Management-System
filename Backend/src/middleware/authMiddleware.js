@@ -10,7 +10,7 @@ else{
 
  try{
  const decoded = jwt.verify(token, process.env.JWT_SECRET )
- req.user = {userID : decoded.userID}
+ req.user = {userID : decoded.userID, role : decoded.role}
  next()
  }
 catch(error){
