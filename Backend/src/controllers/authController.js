@@ -41,7 +41,7 @@ exports.login = async (req, res) => {
       return res.status(200).json({
         success: true, token: token
         , user: {
-          id: newUser.id,
+          id: newUser._id,
           email: newUser.email,
           role: newUser.role
         },
@@ -54,4 +54,34 @@ exports.login = async (req, res) => {
     console.log("failed because", error)
     res.status(500).json({ success: false, message: error.message })
   }
+}
+
+exports.getme = async (req,res) =>{
+ const userId = req.user.userID
+
+
+
+ try{
+  const foundUser =  await User.findById(userId).select('-password')
+  if(foundUser == null){
+    return res.status(404).json({success: false ,message :'User not found'})
+   }
+   else{
+  
+  
+   
+  return res.status(200).json({success:true , message :" user found",
+user : {
+  id: foundUser._id,
+  email: foundUser.email,
+  role: foundUser.role
+}})
+
+
+   }
+}
+catch(error){
+  return res.status(500).json({success : false , message: error.message })
+}
+
 }
