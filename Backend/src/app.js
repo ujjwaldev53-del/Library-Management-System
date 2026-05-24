@@ -2,6 +2,8 @@ const express = require("express")
 const cors = require("cors")
 const authRoutes = require("./routes/authRoutes")
 const bookRoutes = require("./routes/bookRoutes")
+const borrowRoutes = require("./routes/borrowRoutes")
+const seatRoutes = require("./routes/seatRoutes")
 
 const app = express()
 
@@ -14,6 +16,8 @@ app.get('/api/test' , (req,res)=>{
 
 app.use("/api/auth", authRoutes )
 app.use("/api/books" , bookRoutes)
+app.use("/api/borrow" , borrowRoutes)
+app.use("/api/seat" , seatRoutes)
 
 
 
