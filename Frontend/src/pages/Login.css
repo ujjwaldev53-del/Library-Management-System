@@ -1,0 +1,152 @@
+
+/* =========================
+   LOGIN PAGE CSS
+========================= */
+
+.login-page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* =========================
+   FORM CONTAINER
+========================= */
+
+.login-page .loginFormBakground {
+    width: 100%;
+    max-width: 520px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(8px);
+    border-radius: 28px;
+    padding: 38px 34px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* =========================
+   FORM GRID
+========================= */
+
+.login-page form {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 20px 18px;
+    align-items: center;
+}
+
+/* =========================
+   LABELS
+========================= */
+
+.login-page form label {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #1e293b;
+    text-align: center;
+    letter-spacing: -0.2px;
+}
+
+/* =========================
+   INPUT FIELDS
+========================= */
+
+.login-page form input {
+    width: 100%;
+    padding: 13px 16px;
+    border-radius: 25px;
+    border: 1.5px solid #dbe3ee;
+    outline: none;
+    font-size: 0.96rem;
+    color: #0f172a;
+    background: #ffffff;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+
+/* Input Focus */
+
+.login-page form input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+/* Placeholder */
+
+.login-page form input::placeholder {
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+/* =========================
+   BUTTON SECTION
+========================= */
+
+.login-page .loginSubmitButton {
+    grid-column: 1 / -1;
+    margin-top: 12px;
+}
+
+/* Submit Button */
+
+.login-page .submitLoginBtn {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 40px;
+    background: linear-gradient(105deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+    letter-spacing: 0.3px;
+}
+
+/* Hover */
+
+.login-page .submitLoginBtn:hover {
+    background: linear-gradient(105deg, #1d4ed8, #1e3a8a);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+}
+
+/* Click */
+
+.login-page .submitLoginBtn:active {
+    transform: scale(0.98);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 550px) {
+
+    .login-page {
+        padding: 14px;
+    }
+
+    .login-page .loginFormBakground {
+        padding: 26px 20px;
+    }
+
+    .login-page form {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .login-page form label {
+        text-align: left;
+        margin-bottom: -6px;
+    }
+}
+
