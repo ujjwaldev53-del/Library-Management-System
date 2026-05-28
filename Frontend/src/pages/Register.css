@@ -160,6 +160,25 @@
 .register-page .submitBn:active {
     transform: scale(0.96);
 }
+/* Already have an account? Login button */
+.login-link-btn {
+    background: transparent;
+    border: none;
+    color: #3b82f6;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 15px;
+    text-decoration: underline;
+    transition: color 0.2s;
+    width: auto;
+    display: inline-block;
+}
+
+.login-link-btn:hover {
+    color: #1d4ed8;
+    text-decoration: none;
+}
 
 /* Animations */
 @keyframes popup {

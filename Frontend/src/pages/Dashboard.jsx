@@ -25,7 +25,8 @@ if(!user){
     <h3>Hello : {user?.name}</h3>
     <p>Email  : {user?.email}</p>
     <p>Role  : {user?.role}</p>
-    <button onClick={logout}>Logout</button>
+    <button className="logoutBtn" onClick={logout}>Logout</button>
+    <button className="getBookBtn" onClick={() =>navigate('/books')}>Get Books</button>
 
  </div>
  

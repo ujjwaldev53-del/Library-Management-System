@@ -2,17 +2,19 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import './Login.css'
+import  { useAuth } from "../context/AuthContext"
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
  const navigate = useNavigate();
+ const {login} = useAuth()
   const handleLoginSubmit = async (e) => {
+    console.log("Email:", email, "Password:", password);
     e.preventDefault()
     try {
      const response = await axios.post("http://localhost:5000/api/auth/login",
         { email, password })
-        localStorage.setItem('token' , response.data.token)
-        localStorage.setItem('user', JSON.stringify(response.data.user))
+       login(response.data.user , response.data.token)
       navigate("/dashboard")
     }
     catch (error) {
