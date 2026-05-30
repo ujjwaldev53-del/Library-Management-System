@@ -124,6 +124,27 @@ overflow: hidden;
 .getBookBtn:active {
     transform: translateY(1px);
 }
+/* My Borrowed Books Button – Green Gradient */
+.my-borrows-btn {
+    background: linear-gradient(95deg, #10b981, #059669);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 40px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.my-borrows-btn:hover {
+    background: linear-gradient(95deg, #059669, #047857);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(16, 185, 129, 0.3);
+}
 
 /* ===== ORIGINAL BUTTON POSITION KEPT ===== */
 

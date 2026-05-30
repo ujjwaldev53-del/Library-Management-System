@@ -27,8 +27,9 @@ if(!user){
     <p>Role  : {user?.role}</p>
     <button className="logoutBtn" onClick={logout}>Logout</button>
     <button className="getBookBtn" onClick={() =>navigate('/books')}>Get Books</button>
-
- </div>
+    <button className="my-borrows-btn" onClick={() => navigate('/my-borrows')}>
+    My Borrowed Books
+</button> </div>
  
     </div>
   )
