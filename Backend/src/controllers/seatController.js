@@ -1,5 +1,5 @@
 const Seat = require("../models/Seat")
-
+const Borrow = require("../models/Borrow");
 
 exports.getAllSeats = async (req, res) => {
     try {
@@ -78,19 +78,20 @@ exports.cancelBooking = async (req,res) => {
 }
 }
 
-exports.myBookings = async (req,res) => {
-    try{
-        const userID = req.user.userID
-        const mySeat = await Seat.find({
-            bookedBy : userID,
-            status :"booked"
-        })
-        return res.status(200).json({success : true , bookings : mySeat })
+exports.myBookings = async (req, res) => {
+    try {
+      const userID = req.user.userID;
+      const myBorrows = await Borrow.find({ user: userID, status: "borrowed" })
+        .populate('book');
+  
+      // Filter out records where book is null (deleted book)
+      const validBorrows = myBorrows.filter(record => record.book !== null);
+  
+      return res.status(200).json({ success: true, borrows: validBorrows });
+    } catch (error) {
+      return res.status(500).json({ success: false, message: error.message });
     }
-    catch (error) {
-        res.status(500).json({ success: false, message: error.message })
-    }
-}
+  };
 
 exports.addSeat = async (req,res) => {
     try{

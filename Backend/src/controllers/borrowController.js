@@ -92,7 +92,8 @@ try{
     user : userID,
     status : 'borrowed'
   }).populate("book")
-  return res.status(200).json({success : true , borrows : getMyBorrow ,message : " Here is your Borrow Details"})
+  const validBorrows = getMyBorrow.filter(record => record.book !== null);
+  return res.status(200).json({success : true , borrows : validBorrows ,message : " Here is your Borrow Details"})
 }
 catch(error){
   return res.status(500).json({success : false ,  message : error.message})

@@ -56,23 +56,33 @@ const MyBorrow = () => {
         
         <div className="borrows-grid"  >
 
-
-       {borrow.map((borrowItem) => (
-        <div className="borrow-card" key={borrowItem._id}>
-
-<h3>{borrowItem.book.title}</h3>
-
-<p>Author: {borrowItem.book.author}</p>
-
-<p>Borrowed on: {new Date(borrowItem.borrowDate).toDateString()}</p>
-
-<p>Due date: {new Date(borrowItem.dueDate).toDateString()}</p>
-
-<button className="return-btn" onClick={() => returnBook(borrowItem.book._id)}>Return Book</button>
-        </div>
-       ) )
-      
-       }
+{borrow.map((borrowItem) => {
+  if (!borrowItem.book) {
+    return (
+      <div key={borrowItem._id} className="borrow-card">
+        <p>Book has been deleted or is unavailable.</p>
+        <button className="return-btn" disabled>Return</button>
+      </div>
+    );
+  }
+  return (
+    <>
+      <button className="back-to-dashboard" onClick={() => navigate('/dashboard')}>
+        ← Back to Dashboard
+      </button>
+    <div key={borrowItem._id} className="borrow-card">
+      <h3>{borrowItem.book.title}</h3>
+      <p>Author: {borrowItem.book.author}</p>
+      <p>Borrowed on: {new Date(borrowItem.borrowDate).toDateString()}</p>
+      <p>Due date: {new Date(borrowItem.dueDate).toDateString()}</p>
+      <button className="return-btn" onClick={() => returnBook(borrowItem.book._id)}>
+        Return Book
+      </button>
+    </div>
+    </>
+  );
+})}
+       
         </div>
     )
 

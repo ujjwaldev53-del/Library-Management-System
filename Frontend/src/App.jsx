@@ -6,6 +6,8 @@ import { Route, Routes } from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
 import Books from './pages/Books'
 import MyBorrow from './pages/MyBorrow'
+import AddBook from './pages/Admin/AddBook'
+import Seats from './pages/Seats'
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/Books" element={<Books />} />
         <Route path="/my-borrows" element={<MyBorrow />} />
+        <Route path="/admin/add-book" element={<AddBook />} />
+        <Route path="/seats" element={<Seats />} />
       </Routes>
     </>
   )

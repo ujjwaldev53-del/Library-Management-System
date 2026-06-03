@@ -205,6 +205,19 @@
 .modal-buttons button[type="button"]:hover {
     background: #4b5563;
 }
+.back-to-dashboard {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.back-to-dashboard:hover {
+    background-color: #5a6268;
+}
 
 /* Responsive adjustments */
 @media (max-width: 600px) {

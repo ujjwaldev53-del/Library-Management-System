@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 import './Books.css'
 import { useAuth } from '../context/AuthContext'
 const Books = () => {
@@ -9,6 +10,8 @@ const Books = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
+  const navigate = useNavigate();
+  
   const { user } = useAuth()
   const [editModalOpen, setEditModalOpen] = useState(false)
   const [editingBook, setEditingBook] = useState(null)
@@ -113,6 +116,9 @@ const Books = () => {
   } else {
     return (
       <>
+       <button className="back-to-dashboard" onClick={() => navigate('/dashboard')}>
+        ← Back to Dashboard
+      </button>
         <div className='book-grid' >
 
           {books.map((book) => (

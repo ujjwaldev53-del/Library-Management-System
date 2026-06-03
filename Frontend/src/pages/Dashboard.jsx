@@ -29,7 +29,12 @@ if(!user){
     <button className="getBookBtn" onClick={() =>navigate('/books')}>Get Books</button>
     <button className="my-borrows-btn" onClick={() => navigate('/my-borrows')}>
     My Borrowed Books
-</button> </div>
+</button> 
+{user?.role === 'admin' && (
+    <button className="add-book-btn" onClick={() => navigate('/admin/add-book')}>+ Add New Book</button>
+)}
+<button className='bookSeat' onClick={() => navigate('/seats')}>Book Seat</button>
+</div>
  
     </div>
   )

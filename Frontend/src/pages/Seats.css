@@ -1,0 +1,228 @@
+/* ===== SEATS PAGE – COMPLETE CSS (button top-left) ===== */
+
+/* Seats grid layout */
+.seats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Seat card */
+.seat-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(4px);
+    border-radius: 1.5rem;
+    padding: 1.2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+
+.seat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.seat-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.seat-card p {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+    color: #334155;
+}
+
+/* Seat card buttons (Book, Cancel, Disabled) */
+.seat-card button {
+    margin-top: 12px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+/* Book button – green */
+.seat-card button:first-of-type {
+    background: linear-gradient(95deg, #22c55e, #16a34a);
+    color: white;
+}
+.seat-card button:first-of-type:hover {
+    background: linear-gradient(95deg, #16a34a, #15803d);
+    transform: translateY(-2px);
+}
+
+/* Cancel button – red (appears when user owns the booking) */
+.seat-card button:nth-of-type(2) {
+    background: linear-gradient(95deg, #ef4444, #dc2626);
+    color: white;
+}
+.seat-card button:nth-of-type(2):hover {
+    background: linear-gradient(95deg, #dc2626, #b91c1c);
+    transform: translateY(-2px);
+}
+
+/* Disabled button – grey */
+.seat-card button:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ===== ADD NEW SEAT BUTTON (admin) – TOP-LEFT ===== */
+.addSeatBtn {
+    display: inline-block;
+    margin: 20px 0 0 20px;
+    padding: 10px 24px;
+    background: linear-gradient(95deg, #3b82f6, #2563eb);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.addSeatBtn:hover {
+    background: linear-gradient(95deg, #2563eb, #1d4ed8);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(59,130,246,0.3);
+}
+
+/* ===== MODAL OVERLAY (add seat form) ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    width: 340px;
+    text-align: left;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.2);
+    animation: fadeIn 0.2s ease;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 0.9rem;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: 0.2s;
+    box-sizing: border-box;
+}
+.modal-content input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+}
+
+/* Modal buttons container – side by side */
+.modal-content .formAddSeatBtn,
+.modal-content .formCancelSeatBtn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: calc(50% - 6px);
+    display: inline-block;
+    text-align: center;
+}
+.formAddSeatBtn {
+    background: #10b981;
+    color: white;
+    margin-right: 8px;
+}
+.formAddSeatBtn:hover {
+    background: #059669;
+}
+.formCancelSeatBtn {
+    background: #6c757d;
+    color: white;
+}
+.formCancelSeatBtn:hover {
+    background: #5a6268;
+}
+
+.back-to-dashboard {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.back-to-dashboard:hover {
+    background-color: #5a6268;
+}
+
+/* Animation for modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .seats-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .seat-card h3 {
+        font-size: 1.1rem;
+    }
+    .modal-content {
+        width: 90%;
+        padding: 1.5rem;
+    }
+    .addSeatBtn {
+        margin: 15px 0 0 15px;
+        padding: 8px 18px;
+        font-size: 0.9rem;
+    }
+}

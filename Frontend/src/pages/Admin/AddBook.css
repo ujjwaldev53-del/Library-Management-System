@@ -1,0 +1,88 @@
+.addbook-container {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 32px;
+    background: #fff;
+    border-radius: 18px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.addbook-container h1 {
+    text-align: center;
+    margin-bottom: 28px;
+    color: #111827;
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+
+.addbook-form {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 14px 12px;
+    align-items: center;
+}
+
+.addbook-form label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+    text-align: right;
+}
+
+.addbook-form input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #dbe2ea;
+    border-radius: 10px;
+    background: #fafafa;
+    font-size: 14px;
+    transition: all 0.25s ease;
+}
+
+.addbook-form input:hover {
+    border-color: #cbd5e1;
+}
+
+.addbook-form input:focus {
+    outline: none;
+    background: #fff;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.submit-btn {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 12px;
+    min-width: 180px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.submit-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+    .addbook-form {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .addbook-form label {
+        text-align: left;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
