@@ -50,7 +50,7 @@ const MyBorrow = () => {
         return <p>Error : {error}</p>
     }
     if(borrow.length === 0 ){
-        return <p>No books borrowed yet.</p>
+        return <p className="empty-message" > No books borrowed yet.</p>
     }
     return (
         
